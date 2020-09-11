@@ -2,7 +2,10 @@
 
 # compiled output
 /dist
+/dist-*
 /tmp
+/.tmp
+package-lock.json
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
