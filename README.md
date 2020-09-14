@@ -1,28 +1,45 @@
 # InsuranceFrontMc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+# FrontEnd
 
-## Development server
+To working with Insurance and Customers
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Asumptions
 
-## Code scaffolding
+1. Angular CLI: 9.1.12
+2. Node: 12.16.1
+3. docker installed
+4. Existing Users simulated with a method into MC.Insurance.Back.API "/customers"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Instalation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+a. Install with npm
 
-## Running unit tests
+1. npm install
+2. ng serve
+3. open http://localhost:4200 for testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+b. Install with Docker (assuming docker installed on current machine)
 
-## Running end-to-end tests
+1. ./build.sh
+2. ./image.sh
+2. docker run --name insurance-front -p 8092:4200 insurance-front-mc:latest
+3. open http://localhost:8092 for testing
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## API Application Working
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# insurance-front-mc
+You can see the API application working on http://mcinsurancebackapi-env.eba-tvwzp2rf.us-east-1.elasticbeanstalk.com/weatherforecast
+
+## Postman Collection
+
+http://insuranceweb-env.eba-2j9yiazc.us-east-1.elasticbeanstalk.com
+
+## Future Work
+
+1. Unit Testing
+1. Code Coverage
+2. Security
+
+
