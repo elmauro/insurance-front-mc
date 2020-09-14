@@ -1,0 +1,64 @@
+<div class="col-md-12">
+    <h3>Insurance</h3>
+    <div class="panel panel-default">
+        <div class="panel-body" *ngIf="Insurance">
+            <div class="row">
+                <label class="control-label col-md-4" for="name">Name:</label>
+                <div class="col-md-8">
+                    <input type="text" [(ngModel)]="name" value="{{Insurance.name}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-4" for="description">Description:</label>
+                <div class="col-md-8">
+                    <input type="text" [(ngModel)]="description" value="{{Insurance.description}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-4" for="type">Type:</label>
+                <div class="col-md-8">
+                    <select id="type" name="typelist" [(ngModel)]="Insurance.type">
+                        <option value="1">Terremoto</option>
+                        <option value="2">Incendio</option>
+                        <option value="3">Robo</option>
+                        <option value="4">Pérdida</option>
+                        <option value="5">Otro</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-4" for="coverage">Coverage:</label>
+                <div class="col-md-8">
+                    <input type="text" [(ngModel)]="Insurance.coverage" value="{{Insurance.coverage}}" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-4" for="period">Period:</label>
+                <div class="col-md-8">
+                    <input type="number" [(ngModel)]="Insurance.period" value="{{Insurance.period}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-4" for="price">Price:</label>
+                <div class="col-md-8">
+                    <input type="number" [(ngModel)]="Insurance.price" value="{{Insurance.price}}">
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-4" for="type">Risk:</label>
+                <div class="col-md-8">
+                    <select id="risk" name="risklist" [(ngModel)]="Insurance.risk">
+                        <option value="1">Bajo</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Medio-Alto</option>
+                        <option value="4">Alto</option>
+                      </select>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-info btn-lg" (click)="newInsurance()">Nuevo</button>
+                <button type="button" class="btn btn-info btn-lg" (click)="saveInsurance()">Guardar</button>
+            </div>
+        </div>
+    </div>    
+</div>

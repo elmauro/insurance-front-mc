@@ -1,0 +1,21 @@
+<div class="col-md-12">
+    <h3>Insurances</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="scrollable-content">
+                    <div *ngFor="let insurance of insurances" class="list-group">
+                        <div class="col-md-3">{{insurance.name}}</div>
+                        <div class="col-md-3">{{insurance.description}}</div>
+                        <div class="col-md-3">
+                            <input type="image" src="/assets/images/edit-icon-2375785_1280.png" (click)="onSelect(insurance)" height="50px" width="50px"/>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="image" src="/assets/images/delete-sign.png" (click)="onDelete(insurance)" height="50px" width="50px"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
