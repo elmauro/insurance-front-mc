@@ -28,7 +28,7 @@ b. Install with Docker (assuming docker installed on current machine)
 3. open http://localhost:8092 for testing
 
 
-## API Application Working
+## Web Application Working
 
 You can see the Application working on http://insuranceweb-env.eba-2j9yiazc.us-east-1.elasticbeanstalk.com
 
