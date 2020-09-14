@@ -6,7 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'insurance-front-mc';
+  title = 'Insurances';
 
   constructor() { }
 

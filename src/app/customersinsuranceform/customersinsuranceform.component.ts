@@ -16,6 +16,7 @@ export class CustomersinsuranceformComponent implements OnInit {
   customerInsurances: CustomerInsurance[];
   customer: Customer;
   combined: GridCustomerInsurance[];
+  message: string;
 
   constructor(
     private insuranceService: InsuranceService,
@@ -28,6 +29,7 @@ export class CustomersinsuranceformComponent implements OnInit {
     if (this.updateCustomersInsuranceGrid) {
       this.updateCustomersInsuranceGrid.subscribe(data => {
         this.customer = data;
+        this.message = "";
         this.getInsurances(this.customer);
       });
     }
@@ -40,6 +42,7 @@ export class CustomersinsuranceformComponent implements OnInit {
   saveCustomerInsurance(insurance: GridCustomerInsurance) {
     this.customerinsuranceService.saveCustomerInsurance(this.customer, insurance)
     .then(customerinsurance => {
+      this.message = "Insurance Added";
       this.getInsurances(this.customer);
     });
   }
@@ -47,6 +50,7 @@ export class CustomersinsuranceformComponent implements OnInit {
   removeCustomerInsurance(insurance: GridCustomerInsurance) {
     this.customerinsuranceService.deleteCustomerInsurance(this.customer, insurance)
     .then(customerinsurance => {
+      this.message = "Insurance Removed";
       this.getInsurances(this.customer);
     });
   }
