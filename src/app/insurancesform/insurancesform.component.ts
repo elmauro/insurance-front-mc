@@ -22,7 +22,7 @@ export class InsurancesformComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    this.newInsurance();
   }
 
   newInsurance() {
@@ -57,8 +57,8 @@ export class InsurancesformComponent implements OnInit {
       }
       else {
         this.getDate();
-        //this.Insurance.name = this.name;
-        //this.Insurance.description = this.description;
+        this.Insurance.name = (this.Insurance.name != this.name && this.name != "") ? this.name : this.Insurance.name;
+        this.Insurance.description = (this.Insurance.description != this.description && this.description != "") ? this.description : this.Insurance.description;
         this.Insurance.start = this.newDate;
 
         this.insuranceService.saveInsurance(this.Insurance)
