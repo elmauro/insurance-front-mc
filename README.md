@@ -30,11 +30,7 @@ b. Install with Docker (assuming docker installed on current machine)
 
 ## API Application Working
 
-You can see the API application working on http://mcinsurancebackapi-env.eba-tvwzp2rf.us-east-1.elasticbeanstalk.com/weatherforecast
-
-## Postman Collection
-
-http://insuranceweb-env.eba-2j9yiazc.us-east-1.elasticbeanstalk.com
+You can see the Application working on http://insuranceweb-env.eba-2j9yiazc.us-east-1.elasticbeanstalk.com
 
 ## Future Work
 

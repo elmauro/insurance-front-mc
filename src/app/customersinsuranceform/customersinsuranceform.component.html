@@ -1,18 +1,17 @@
 <div class="col-md-12">
     <h3>Customer Insurances</h3>
+    <h4 class="modal-title">{{customer.name}}</h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row">
                 <div class="scrollable-content">
                     <div *ngFor="let insurance of insurances" class="list-group">
-                        <div class="col-md-3">{{insurance.name}}</div>
-                        <div class="col-md-3">{{insurance.description}}</div>
-                        <div class="col-md-3" *ngIf="!insurance.show">
-                            <button type="button" class="btn btn-primary" (click)="saveCustomerInsurance(insurance)">Add</button>
-                        </div>
-                        <div class="col-md-3" *ngIf="insurance.show">
-                            <button type="button" class="btn btn-default" (click)="removeCustomerInsurance(insurance)">Remove</button>
-                        </div>                        
+                        <div class="col-md-4">{{insurance.name}}</div>
+                        <div class="col-md-4">{{insurance.description}}</div>
+                        <div class="col-md-4">
+                            <button *ngIf="!insurance.show" type="button" class="btn btn-primary" (click)="saveCustomerInsurance(insurance)">Add</button>
+                            <button *ngIf="insurance.show" type="button" class="btn btn-default" (click)="removeCustomerInsurance(insurance)">Remove</button>
+                        </div>                      
                     </div>
                 </div>
             </div>

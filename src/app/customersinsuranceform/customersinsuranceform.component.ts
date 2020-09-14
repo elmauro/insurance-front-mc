@@ -24,8 +24,7 @@ export class CustomersinsuranceformComponent implements OnInit {
 
   initialize() {
     this.insurances = [];
-    //this.getInsurances();
-
+    
     if (this.updateCustomersInsuranceGrid) {
       this.updateCustomersInsuranceGrid.subscribe(data => {
         this.customer = data;
@@ -36,12 +35,6 @@ export class CustomersinsuranceformComponent implements OnInit {
 
   ngOnInit(): void {
     this.initialize();
-  }
-
-  onSelect(insurance: Insurance): void {
-  }
-
-  onDelete(insurance: Insurance): void {
   }
 
   saveCustomerInsurance(insurance: GridCustomerInsurance) {
@@ -62,7 +55,6 @@ export class CustomersinsuranceformComponent implements OnInit {
     this.insurances = [];
     this.insuranceService.getInsurances()
     .then(insurances => {
-
       this.combined = [];
 
       for(let i=0; i<insurances.length; i++) {
@@ -79,8 +71,8 @@ export class CustomersinsuranceformComponent implements OnInit {
           'price': insurance.price,
           'risk': insurance.risk,
           'show': false
-        }
-      }
+        };
+      };
 
       this.getCustomerInsurances(this.customer);
     });
@@ -92,7 +84,8 @@ export class CustomersinsuranceformComponent implements OnInit {
       this.customerInsurances = customerinsurances;
 
       for(let i=0; i<customerinsurances.length; i++) {
-        let insurance = customerinsurances[i]
+        let insurance = customerinsurances[i];
+
         this.combined[customerinsurances[i].insuranceId] = {
           'insuranceId': insurance.insuranceId,
           'name': insurance.name,
@@ -104,17 +97,14 @@ export class CustomersinsuranceformComponent implements OnInit {
           'price': insurance.price,
           'risk': insurance.risk,
           'show': true
-        }        
-        //customerinsurances[i];
-      }
+        };
+      };
 
       this.combined.forEach(element => {
           if(element.insuranceId) {
             this.insurances.push(element);
           }
       });
-
     });
   }
-
 }

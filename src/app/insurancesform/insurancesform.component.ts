@@ -15,6 +15,7 @@ export class InsurancesformComponent implements OnInit {
   name: string;
   description: string;
   newDate: string;
+  message: string;
 
   constructor(
     private insuranceService: InsuranceService
@@ -25,6 +26,11 @@ export class InsurancesformComponent implements OnInit {
   }
 
   newInsurance() {
+    this.message = "";
+    this.name = "";
+    this.description = "";
+    this.newDate = "";
+
     this.Insurance = {
       'insuranceId': 0,
       'name': '',
@@ -40,23 +46,25 @@ export class InsurancesformComponent implements OnInit {
 
   saveInsurance() {
       if(this.Insurance.insuranceId != 0) {  
-        this.Insurance.name = this.name;
-        this.Insurance.description = this.description;
+        this.Insurance.name = (this.Insurance.name != this.name && this.name != "") ? this.name : this.Insurance.name;
+        this.Insurance.description = (this.Insurance.description != this.description && this.description != "") ? this.description : this.Insurance.description;
         this.insuranceService.updateInsurance(this.Insurance.insuranceId, this.Insurance)
         .then(insurance => {
           this.newInsurance();
+          this.message = "Insurance Saved";
           this.outputSaveEvent.emit(true);
         });        
       }
       else {
         this.getDate();
-        this.Insurance.name = this.name;
-        this.Insurance.description = this.description;
+        //this.Insurance.name = this.name;
+        //this.Insurance.description = this.description;
         this.Insurance.start = this.newDate;
 
         this.insuranceService.saveInsurance(this.Insurance)
         .then(insurance => {
           this.newInsurance();
+          this.message = "Insurance Saved";
           this.outputSaveEvent.emit(true);
         });        
       }

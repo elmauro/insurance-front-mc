@@ -55,9 +55,14 @@
                       </select>
                 </div>
             </div>
+            <br>
             <div class="form-actions">
                 <button type="button" class="btn btn-info btn-lg" (click)="newInsurance()">Nuevo</button>
                 <button type="button" class="btn btn-info btn-lg" (click)="saveInsurance()">Guardar</button>
+            </div>
+            <br>
+            <div class="alert alert-success" *ngIf="message">
+                <strong>Success!</strong> {{ message }}.
             </div>
         </div>
     </div>    
