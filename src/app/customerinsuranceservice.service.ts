@@ -8,7 +8,7 @@ import { Customer, CustomerInsurance, GridCustomerInsurance } from './insurance'
 })
 export class CustomerInsuranceService {
 
-  private url = 'http://mcinsurancebackapi-env.eba-tvwzp2rf.us-east-1.elasticbeanstalk.com/';
+  private url = 'http://localhost:5000/';
   private insurancePath = 'customers';
   private headers = new Headers({'Content-Type': 'application/json'});
 

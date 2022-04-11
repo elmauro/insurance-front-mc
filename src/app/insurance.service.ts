@@ -8,9 +8,13 @@ import { Insurance } from './insurance';
 })
 export class InsuranceService {
 
-  private url = 'http://mcinsurancebackapi-env.eba-tvwzp2rf.us-east-1.elasticbeanstalk.com/';
-  private insurancePath = 'insurances';
-  private headers = new Headers({'Content-Type': 'application/json'});
+  private url = 'https://www.ifmnetback.com/';
+  private insurancePath = 'countries';
+  private headers = new Headers(
+    {
+      'Content-Type': 'application/json',
+      'ApiKey': 'hl4bA4nb4yI0vI0fC8fH7eT6'
+    });
 
   constructor(private http: Http) {
   }
@@ -31,7 +35,7 @@ export class InsuranceService {
 
   getInsurances(): Promise<Insurance[]> {
     return this.http
-          .get(this.url + this.insurancePath)
+          .get(this.url + this.insurancePath, {headers: this.headers})
           .toPromise()
           .then(res => res.json() as Insurance[]); 
   }

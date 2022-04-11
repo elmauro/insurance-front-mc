@@ -25,6 +25,10 @@ export class CustomersinsuranceformComponent implements OnInit {
 
   initialize() {
     this.insurances = [];
+    this.customer = {
+      document: '',
+	    name: '',
+    }
     
     if (this.updateCustomersInsuranceGrid) {
       this.updateCustomersInsuranceGrid.subscribe(data => {

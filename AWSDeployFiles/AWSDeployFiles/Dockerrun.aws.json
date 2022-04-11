@@ -1,0 +1,16 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Authentication": {
+    "Bucket": "insurance-front-mc",
+    "Key": "config.dockercfg"
+  },
+  "Image": {
+    "Name": "728401402215.dkr.ecr.us-east-1.amazonaws.com/insurance-front-mc:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 4200
+    }
+  ]
+}
